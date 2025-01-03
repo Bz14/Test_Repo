@@ -1,0 +1,30 @@
+# This is a simple CI/CD workflow for a React application
+
+name: React CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  install_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Install Dependencies
+        run: |
+          npm install
+        working-directory: "./my-app"
+
+      - name: Run Tests
+        run: |
+          npm test
+        working-directory: "./my-app"
