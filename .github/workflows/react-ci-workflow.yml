@@ -1,4 +1,6 @@
-name: Node CI Workflow
+# This is a simple CI/CD workflow for a React application
+
+name: React CI Workflow
 
 on:
   push:
@@ -20,9 +22,9 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-        working-directory: "./app"
+        working-directory: "./my-app"
 
       - name: Run Tests
         run: |
           npm test
-        working-directory: "./app"
+        working-directory: "./my-app"
