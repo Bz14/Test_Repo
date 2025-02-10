@@ -1,5 +1,15 @@
 name: Github Actions Demo
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Enter your name"
+        required: true
+        default: "Github User"
+      deploy:
+        description: "Deploy the application?"
+        required: false
+        default: "yes"
 
 jobs:
   Example-Action-Job:
