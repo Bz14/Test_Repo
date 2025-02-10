@@ -1,15 +1,8 @@
 name: Github Actions Demo
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: "Enter your name"
-        required: true
-        default: "Github User"
-      deploy:
-        description: "Deploy the application?"
-        required: false
-        default: "yes"
+  repository_dispatch:
+    types:
+      - trigger-workflow
 
 jobs:
   Example-Action-Job:
@@ -18,7 +11,7 @@ jobs:
 
     steps:
       - name: Print event name
-        run: echo "The job is triggered by ${{ github.event_name }} event"
+        run: echo "From external event ${{github.event.client_payload.message}}"
 
       - name: Print runner OS
         run: echo "The job is running on a ${{ runner.os }} runner"
