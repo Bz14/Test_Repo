@@ -17,7 +17,7 @@ def test_fizz():
 
 def test_buzz():
     # Test multiples of 5 only (Buzz)
-    assert main(5) == "Buzz"
+    assert main(1) == "Buzz"
     assert main(10) == "Buzz"
     assert main(20) == "Buzz"
 
